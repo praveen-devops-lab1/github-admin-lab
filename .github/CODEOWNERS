@@ -1,0 +1,8 @@
+# Application source code
+/src/praveen-devops-lab/developers
+
+# Jenkins pipeline
+/Jenkinsfile praveen-devops-lab/devops
+
+# Terraform infrastructure
+/terraform/ praveen-devops-lab/devops
