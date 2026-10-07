@@ -1,0 +1,26 @@
+name: DevOps Lab CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print message
+        run: echo "Hello from GitHub Actions"
+
+      - name: Verify secret exists
+        env:
+          DEMO_PASSWORD: ${{ secrets.DEMO_PASSWORD }}
+        run: |
+          if [ -n "$DEMO_PASSWORD" ]; then
+            echo "Secret is available successfully"
+          else
+            echo "Secret is missing"
+            exit 1
+          fi
